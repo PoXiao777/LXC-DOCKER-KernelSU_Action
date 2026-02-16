@@ -29,6 +29,7 @@ jobs:
       run: |
         sudo apt update
         sudo add-apt-repository universe
+        sudo apt update
         sudo apt install python2
         sudo apt -y install git make bc bison ccache openssl zip kmod cpio flex libelf-dev curl libssl-dev libtfm-dev wget device-tree-compiler ca-certificates python3 binutils binutils-aarch64-linux-gnu binutils-arm-linux-gnueabi
         mkdir -p $GITHUB_WORKSPACE/kernel_workspace
