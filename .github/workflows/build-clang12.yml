@@ -34,8 +34,9 @@ jobs:
         sudo ./configure --enable-optimizations
         sudo make altinstall 
         python2.7 --version
-        sudo rm /bin/python
-        sudo ln -s /bin/python2.7 /bin/python
+        sudo ln -sfn /usr/local/bin/python2.7 /usr/bin/python2
+        sudo update-alternatives --install /usr/bin/python python /usr/bin/python2 1
+        sudo update-alternatives --config python
         sudo apt -y install git make bc bison ccache openssl zip kmod cpio flex libelf-dev curl libssl-dev libtfm-dev wget device-tree-compiler ca-certificates binutils binutils-aarch64-linux-gnu binutils-arm-linux-gnueabi
         mkdir -p $GITHUB_WORKSPACE/kernel_workspace
     
